@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Explain This Error",
+  "version": "1.0.0",
+  "description": "Highlight any error → instantly understand it + get fix suggestions",
+  "permissions": [
+    "devtools",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://api.explainthiserror.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background/index.ts"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/index.ts"],
+      "run_at": "document_start"
+    }
+  ],
+  "devtools_page": "devtools.html",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Explain This Error"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

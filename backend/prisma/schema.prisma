@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Error {
+  id          String   @id @default(cuid())
+  hash        String   @unique // For deduplication
+  type        String   // console, network, manual
+  message     String
+  stack       String?
+  line        Int?
+  column      Int?
+  filename    String?
+  url         String
+  userAgent   String
+  framework   String?
+  severity    String   // error, warning, info
+  frequency   Int      @default(1)
+  resolved    Boolean  @default(false)
+  firstSeen   DateTime @default(now())
+  lastSeen    DateTime @updatedAt
+  
+  explanations Explanation[]
+  
+  @@map("errors")
+}
+
+model Explanation {
+  id          String   @id @default(cuid())
+  errorId     String
+  explanation String
+  rootCause   String
+  fixSnippet  String
+  references  String[] // Array of URLs
+  confidence  Float
+  aiModel     String
+  createdAt   DateTime @default(now())
+  
+  error Error @relation(fields: [errorId], references: [id], onDelete: Cascade)
+  
+  @@map("explanations")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  sessions UserSession[]
+  
+  @@map("users")
+}
+
+model UserSession {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@map("user_sessions")
+}
+
+model Feedback {
+  id           String   @id @default(cuid())
+  explanationId String
+  rating       Int      // 1-5 stars
+  comment      String?
+  createdAt    DateTime @default(now())
+  
+  @@map("feedback")
+}
