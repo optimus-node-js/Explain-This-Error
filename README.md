@@ -1,10 +1,10 @@
 # Explain This Error
 
-**Tagline:** Highlight any error → instantly understand it + get fix suggestions.
+**Tagline:** Highlight any error instantly understand it + get fix suggestions.
 
 A browser extension that integrates with Chrome DevTools to provide AI-powered error explanations and fix suggestions, helping developers understand and resolve errors faster.
 
-## 🚀 Features
+## Features
 
 - **Real-time Error Detection** - Monitors console and network errors automatically
 - **AI-Powered Explanations** - Uses OpenAI GPT-4 to explain errors in plain English
@@ -13,7 +13,7 @@ A browser extension that integrates with Chrome DevTools to provide AI-powered e
 - **Filtering & Search** - Find specific errors quickly
 - **Export Capabilities** - Generate reports for team debugging
 
-## 🏗️ Architecture
+## Architecture
 
 ### Extension (Frontend)
 - **Chrome Extension Manifest V3** with React + TypeScript
@@ -28,7 +28,7 @@ A browser extension that integrates with Chrome DevTools to provide AI-powered e
 - **Redis** caching for performance
 - **Rate Limiting** and security features
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 - [Bun](https://bun.sh/) (recommended) or Node.js 18+
@@ -81,7 +81,7 @@ bun run build
    - Press F12 on any webpage
    - Look for "Explain This Error" tab in DevTools
 
-## 🔧 Development
+## Development
 
 ### Extension Development
 ```bash
@@ -101,7 +101,7 @@ bun run db:migrate    # Database migrations
 bun run db:studio     # Prisma Studio
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 explain-this-error/
@@ -127,7 +127,7 @@ explain-this-error/
 └── README.md
 ```
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### POST /api/v1/explain-error
 Explain a JavaScript error using AI.
@@ -179,7 +179,7 @@ Explain a JavaScript error using AI.
 ### GET /api/v1/health
 Health check endpoint.
 
-## 🎯 Usage
+## Usage
 
 1. **Install the extension** in Chrome
 2. **Open DevTools** (F12) on any webpage
@@ -189,7 +189,7 @@ Health check endpoint.
 6. **Copy fix snippets** and apply them to your code
 7. **Mark errors as resolved** when fixed
 
-## 🔒 Privacy & Security
+## Privacy & Security
 
 - **Minimal Data Collection** - Only error messages and stack traces
 - **Data Sanitization** - Personal information is removed before processing
@@ -197,7 +197,7 @@ Health check endpoint.
 - **No Tracking** - No user behavior tracking or analytics
 - **Open Source** - Full source code available for review
 
-## 🚀 Deployment
+## Deployment
 
 ### Backend Deployment
 The backend can be deployed to any Node.js hosting service:
@@ -220,7 +220,7 @@ bun run package
 
 3. **Submit to Chrome Web Store** following their guidelines
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -228,17 +228,17 @@ bun run package
 4. Add tests if applicable
 5. Submit a pull request
 
-## 📄 License
+## License
 
 MIT License - see LICENSE file for details
 
-## 🆘 Support
+## Support
 
 - **Issues:** GitHub Issues
 - **Documentation:** Check the memory-bank/ folder
 - **Discussions:** GitHub Discussions
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] VS Code extension
 - [ ] Firefox support
@@ -249,17 +249,16 @@ MIT License - see LICENSE file for details
 
 ---
 
-**Made with ❤️ for developers who want to spend less time debugging and more time building.**
+**Made with for developers who want to spend less time debugging and more time building.**
 
 ---
 
-## 👤 Author
+## Author
 
-**Rahul Vishwakarma** — Senior Full Stack Developer · Ahmedabad, India
+**Rahul Vishwakarma**, Senior Full Stack Developer based in Ahmedabad, India
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-rahul--vishwakarma--portfolio.vercel.app-0A66C2?style=flat-square&logo=vercel&logoColor=white)](https://rahul-vishwakarma-portfolio.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Rahul%20Vishwakarma-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/rahul-vishwakarma-101346192)
 [![Email](https://img.shields.io/badge/Email-karmarahul67%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:karmarahul67@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-optimus--node--js-181717?style=flat-square&logo=github)](https://github.com/optimus-node-js)
 
-If you find this project useful, consider giving it a ⭐.
